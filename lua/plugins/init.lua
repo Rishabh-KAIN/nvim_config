@@ -9,6 +9,20 @@ return {
 		end,
 	},
 	{
+		"vinnymeller/swagger-preview.nvim",
+		cmd = { "SwaggerPreview", "SwaggerPreviewStop", "SwaggerPreviewToggle" },
+		ft = { "yaml", "json" }, -- set file types for which the plugin is active
+		build = "npm install",
+		config = function()
+			local plugin = require("swagger-preview")
+			plugin.setup({
+				-- You can add debug options here if needed
+				port = 8000,
+				host = "localhost",
+			})
+		end,
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()

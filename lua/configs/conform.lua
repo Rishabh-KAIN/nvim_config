@@ -71,7 +71,7 @@ local options = {
 
 require("conform").setup(options)
 
-vim.g.enable_autoformat = false
+vim.g.enable_autoformat = true
 
 local toggle_format = function()
 	vim.g.enable_autoformat = not vim.g.enable_autoformat
